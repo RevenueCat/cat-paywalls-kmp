@@ -5,6 +5,7 @@
   <a href="https://android-arsenal.com/api?level=24"><img alt="API" src="https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat"/></a>
   <a href="https://kotlinlang.org"><img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.3.0-purple.svg?style=flat"/></a>
   <a href="https://www.jetbrains.com/lp/compose-multiplatform/"><img alt="Compose Multiplatform" src="https://img.shields.io/badge/Compose%20Multiplatform-1.9.0-blue.svg?style=flat"/></a>
+  <a href="https://github.com/RevenueCat/cat-paywalls-kmp/actions/workflows/build.yml"><img alt="Build" src="https://github.com/RevenueCat/cat-paywalls-kmp/actions/workflows/build.yml/badge.svg"/></a>
 </p>
 
 Cat Paywalls KMP is the Kotlin Multiplatform version of [Cat Paywall Compose](https://github.com/RevenueCat/cat-paywall-compose), demonstrating in-app purchases, entitlement, and server-driven paywalls on Kotlin Multiplatform for both Android and iOS using [RevenueCat's purchases-kmp SDK](https://github.com/RevenueCat/purchases-kmp) and Compose Multiplatform. This project showcases how to share paywall and subscription logic across platforms while maintaining native performance.
