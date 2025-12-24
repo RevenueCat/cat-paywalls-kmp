@@ -5,3 +5,11 @@ plugins {
 android {
   namespace = "com.revenuecat.catpaywalls.feature.subscriptions"
 }
+
+kotlin {
+  sourceSets {
+    commonTest.dependencies {
+      implementation(projects.core.data)
+    }
+  }
+}

@@ -45,6 +45,9 @@ jetbrains-lifecycle = "2.10.0-alpha07"
 # Testing
 junit = "4.13.2"
 kotlin-test = "2.2.20"
+kotlinx-coroutines-test = "1.10.2"
+turbine = "1.2.0"
+mockk = "1.14.4"
 
 [libraries]
 # Compose Multiplatform (from JetBrains)
@@ -98,6 +101,9 @@ metro-gradlePlugin = { module = "dev.zacsweers.metro:dev.zacsweers.metro.gradle.
 # Testing
 junit = { module = "junit:junit", version.ref = "junit" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin-test" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
