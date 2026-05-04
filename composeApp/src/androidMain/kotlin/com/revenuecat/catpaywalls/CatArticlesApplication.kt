@@ -16,6 +16,7 @@
 package com.revenuecat.catpaywalls
 
 import android.app.Application
+import com.revenuecat.catpaywalls.core.data.di.installApplicationContext
 import com.revenuecat.catpaywalls.di.AppGraph
 import com.revenuecat.purchases.kmp.LogLevel
 import com.revenuecat.purchases.kmp.Purchases
@@ -29,12 +30,16 @@ class CatArticlesApplication : Application() {
   override fun onCreate() {
     super.onCreate()
 
+    installApplicationContext(this)
     appGraph = createGraph<AppGraph>()
 
-    // Initialize RevenueCat
+    // Initialize RevenueCat. When BuildConfig.REVENUECAT_TEST_API_KEY is set in
+    // local.properties (revenuecat.test.api.key=...), the Test Store sandbox key
+    // takes precedence so the app exercises the Test Store purchase flow.
     Purchases.logLevel = LogLevel.DEBUG
+    val apiKey = BuildConfig.REVENUECAT_TEST_API_KEY.takeIf { it.isNotBlank() } ?: REVENUECAT_API_KEY
     Purchases.configure(
-      PurchasesConfiguration(apiKey = REVENUECAT_API_KEY) {
+      PurchasesConfiguration(apiKey = apiKey) {
         appUserId = null // Anonymous user
       },
     )

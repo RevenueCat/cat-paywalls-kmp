@@ -17,15 +17,20 @@ package com.revenuecat.catpaywalls.di
 
 import androidx.compose.runtime.Stable
 import com.revenuecat.catpaywalls.core.data.ArticlesRepository
+import com.revenuecat.catpaywalls.core.data.BookmarksRepository
 import com.revenuecat.catpaywalls.core.data.PaywallsRepository
+import com.revenuecat.catpaywalls.core.data.ReadingTrackerRepository
 import com.revenuecat.catpaywalls.core.data.di.DataScope
 import com.revenuecat.catpaywalls.core.data.di.createArticlesRepository
+import com.revenuecat.catpaywalls.core.data.di.createBookmarksRepository
 import com.revenuecat.catpaywalls.core.data.di.createPaywallsRepository
+import com.revenuecat.catpaywalls.core.data.di.createReadingTrackerRepository
 import com.revenuecat.catpaywalls.core.network.CatArticlesService
 import com.revenuecat.catpaywalls.core.network.createHttpClient
 import com.revenuecat.catpaywalls.core.network.di.NetworkScope
 import com.revenuecat.catpaywalls.core.network.di.createCatArticlesService
 import com.revenuecat.catpaywalls.feature.article.CatArticlesDetailViewModel
+import com.revenuecat.catpaywalls.feature.bookmarks.BookmarksViewModel
 import com.revenuecat.catpaywalls.feature.home.CatArticlesViewModel
 import com.revenuecat.catpaywalls.feature.subscriptions.SubscriptionManagementViewModel
 import dev.zacsweers.metro.DependencyGraph
@@ -47,6 +52,7 @@ abstract class AppGraph {
   // ViewModels
   abstract val catArticlesViewModel: CatArticlesViewModel
   abstract val subscriptionManagementViewModel: SubscriptionManagementViewModel
+  abstract val bookmarksViewModel: BookmarksViewModel
 
   // Factory for ViewModels that need runtime parameters
   abstract val articleDetailViewModelFactory: CatArticlesDetailViewModel.Factory
@@ -68,4 +74,12 @@ abstract class AppGraph {
   @Provides
   @SingleIn(DataScope::class)
   fun providePaywallsRepository(): PaywallsRepository = createPaywallsRepository()
+
+  @Provides
+  @SingleIn(DataScope::class)
+  fun provideBookmarksRepository(): BookmarksRepository = createBookmarksRepository()
+
+  @Provides
+  @SingleIn(DataScope::class)
+  fun provideReadingTrackerRepository(): ReadingTrackerRepository = createReadingTrackerRepository()
 }

@@ -51,7 +51,12 @@ class CatArticlesViewModelTest {
     fakeRepository.setArticlesResult(Result.success(articles))
 
     // When
-    val viewModel = CatArticlesViewModel(fakeRepository)
+    val viewModel = CatArticlesViewModel(
+      articlesRepository = fakeRepository,
+      paywallsRepository = FakePaywallsRepository(),
+      bookmarksRepository = FakeBookmarksRepository(),
+      readingTrackerRepository = FakeReadingTrackerRepository(),
+    )
 
     // Then
     viewModel.uiState.test {
@@ -67,7 +72,12 @@ class CatArticlesViewModelTest {
     fakeRepository.setArticlesResult(Result.success(articles))
 
     // When
-    val viewModel = CatArticlesViewModel(fakeRepository)
+    val viewModel = CatArticlesViewModel(
+      articlesRepository = fakeRepository,
+      paywallsRepository = FakePaywallsRepository(),
+      bookmarksRepository = FakeBookmarksRepository(),
+      readingTrackerRepository = FakeReadingTrackerRepository(),
+    )
 
     // Then
     viewModel.uiState.test {
@@ -94,7 +104,12 @@ class CatArticlesViewModelTest {
     fakeRepository.setArticlesResult(Result.failure(Exception(errorMessage)))
 
     // When
-    val viewModel = CatArticlesViewModel(fakeRepository)
+    val viewModel = CatArticlesViewModel(
+      articlesRepository = fakeRepository,
+      paywallsRepository = FakePaywallsRepository(),
+      bookmarksRepository = FakeBookmarksRepository(),
+      readingTrackerRepository = FakeReadingTrackerRepository(),
+    )
 
     // Then
     viewModel.uiState.test {
@@ -119,7 +134,12 @@ class CatArticlesViewModelTest {
     fakeRepository.setArticlesResult(Result.success(emptyList()))
 
     // When
-    val viewModel = CatArticlesViewModel(fakeRepository)
+    val viewModel = CatArticlesViewModel(
+      articlesRepository = fakeRepository,
+      paywallsRepository = FakePaywallsRepository(),
+      bookmarksRepository = FakeBookmarksRepository(),
+      readingTrackerRepository = FakeReadingTrackerRepository(),
+    )
 
     // Then
     viewModel.uiState.test {

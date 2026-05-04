@@ -13,27 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.revenuecat.catpaywalls.core.navigation
+package com.revenuecat.catpaywalls.core.data
 
-import kotlinx.serialization.Serializable
+import kotlinx.coroutines.flow.Flow
 
-@Serializable
-sealed interface CatArticlesScreen {
-  @Serializable
-  data object CatHome : CatArticlesScreen
+interface ReadingTrackerRepository {
+  val todayReadCount: Flow<Int>
 
-  @Serializable
-  data object Paywalls : CatArticlesScreen
-
-  @Serializable
-  data class CatArticle(val articleId: Long) : CatArticlesScreen
-
-  @Serializable
-  data object Account : CatArticlesScreen
-
-  @Serializable
-  data object SubscriptionManagement : CatArticlesScreen
-
-  @Serializable
-  data object Bookmarks : CatArticlesScreen
+  suspend fun recordArticleRead(articleTitle: String)
 }

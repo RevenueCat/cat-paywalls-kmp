@@ -16,6 +16,9 @@ kotlin {
 
       api(libs.purchases.kmp.core)
       api(libs.kotlinx.coroutines.core)
+
+      api(libs.androidx.datastore.preferences.core)
+      implementation(libs.kotlinx.datetime)
     }
   }
 }

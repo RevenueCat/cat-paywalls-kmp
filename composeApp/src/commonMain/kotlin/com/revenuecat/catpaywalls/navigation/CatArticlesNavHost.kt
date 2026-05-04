@@ -28,6 +28,7 @@ import com.revenuecat.catpaywalls.core.navigation.LocalComposeNavigator
 import com.revenuecat.catpaywalls.di.AppGraph
 import com.revenuecat.catpaywalls.feature.account.AccountScreen
 import com.revenuecat.catpaywalls.feature.article.CatArticlesDetail
+import com.revenuecat.catpaywalls.feature.bookmarks.BookmarksScreen
 import com.revenuecat.catpaywalls.feature.home.CatArticlesHome
 import com.revenuecat.catpaywalls.feature.paywalls.CatCustomPaywalls
 import com.revenuecat.catpaywalls.feature.subscriptions.SubscriptionManagementScreen
@@ -66,6 +67,10 @@ fun CatArticlesNavHost(appGraph: AppGraph) {
 
       composable<CatArticlesScreen.SubscriptionManagement> {
         SubscriptionManagementScreen(viewModel = appGraph.subscriptionManagementViewModel)
+      }
+
+      composable<CatArticlesScreen.Bookmarks> {
+        BookmarksScreen(viewModel = appGraph.bookmarksViewModel)
       }
     }
   }
