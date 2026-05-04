@@ -43,6 +43,7 @@ include(":feature:article")
 include(":feature:paywalls")
 include(":feature:account")
 include(":feature:subscriptions")
+include(":feature:bookmarks")
 
 // App modules
 include(":composeApp")

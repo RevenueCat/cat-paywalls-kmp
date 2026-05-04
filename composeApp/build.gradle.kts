@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
   alias(libs.plugins.kotlin.multiplatform)
@@ -65,6 +66,7 @@ kotlin {
       implementation(projects.feature.paywalls)
       implementation(projects.feature.account)
       implementation(projects.feature.subscriptions)
+      implementation(projects.feature.bookmarks)
 
       // Compose
       implementation(compose.runtime)
@@ -107,6 +109,11 @@ kotlin {
   }
 }
 
+val localProperties = Properties().apply {
+  val file = rootProject.file("local.properties")
+  if (file.exists()) file.inputStream().use { load(it) }
+}
+
 android {
   namespace = "com.revenuecat.catpaywalls"
   compileSdk = libs.versions.android.compileSdk.get().toInt()
@@ -117,10 +124,18 @@ android {
     targetSdk = libs.versions.android.targetSdk.get().toInt()
     versionCode = 1
     versionName = "1.0"
+
+    // RevenueCat Test Store API key (loaded from local.properties)
+    buildConfigField(
+      "String",
+      "REVENUECAT_TEST_API_KEY",
+      "\"${localProperties.getProperty("revenuecat.test.api.key", "")}\"",
+    )
   }
 
   buildFeatures {
     compose = true
+    buildConfig = true
   }
 
   compileOptions {

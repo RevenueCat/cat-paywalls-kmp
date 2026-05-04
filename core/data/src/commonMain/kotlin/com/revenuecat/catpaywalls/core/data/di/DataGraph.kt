@@ -17,8 +17,12 @@ package com.revenuecat.catpaywalls.core.data.di
 
 import com.revenuecat.catpaywalls.core.data.ArticlesRepository
 import com.revenuecat.catpaywalls.core.data.ArticlesRepositoryImpl
+import com.revenuecat.catpaywalls.core.data.BookmarksRepository
+import com.revenuecat.catpaywalls.core.data.BookmarksRepositoryImpl
 import com.revenuecat.catpaywalls.core.data.PaywallsRepository
 import com.revenuecat.catpaywalls.core.data.PaywallsRepositoryImpl
+import com.revenuecat.catpaywalls.core.data.ReadingTrackerRepository
+import com.revenuecat.catpaywalls.core.data.ReadingTrackerRepositoryImpl
 import com.revenuecat.catpaywalls.core.network.CatArticlesService
 
 /**
@@ -28,3 +32,11 @@ import com.revenuecat.catpaywalls.core.network.CatArticlesService
 fun createArticlesRepository(service: CatArticlesService): ArticlesRepository = ArticlesRepositoryImpl(service)
 
 fun createPaywallsRepository(): PaywallsRepository = PaywallsRepositoryImpl()
+
+fun createBookmarksRepository(): BookmarksRepository = BookmarksRepositoryImpl(
+  dataStore = createPreferencesDataStore(BOOKMARKS_DATA_STORE_NAME),
+)
+
+fun createReadingTrackerRepository(): ReadingTrackerRepository = ReadingTrackerRepositoryImpl(
+  dataStore = createPreferencesDataStore(READING_TRACKER_DATA_STORE_NAME),
+)

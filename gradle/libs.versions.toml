@@ -38,6 +38,7 @@ kotlinx-datetime = "0.7.1"
 # AndroidX
 androidx-activity = "1.12.2"
 androidx-lifecycle = "2.9.0"
+androidx-datastore = "1.1.7"
 
 # JetBrains Lifecycle (KMP)
 jetbrains-lifecycle = "2.10.0"
@@ -87,6 +88,9 @@ purchases-kmp-ui = { module = "com.revenuecat.purchases:purchases-kmp-ui", versi
 
 # AndroidX (Android-only)
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+
+# DataStore (KMP)
+androidx-datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "androidx-datastore" }
 
 # JetBrains Lifecycle (KMP)
 jetbrains-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version.ref = "jetbrains-lifecycle" }

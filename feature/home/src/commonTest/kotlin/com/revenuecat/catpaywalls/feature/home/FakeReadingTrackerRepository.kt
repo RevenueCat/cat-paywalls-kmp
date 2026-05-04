@@ -13,27 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.revenuecat.catpaywalls.core.navigation
+package com.revenuecat.catpaywalls.feature.home
 
-import kotlinx.serialization.Serializable
+import com.revenuecat.catpaywalls.core.data.ReadingTrackerRepository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 
-@Serializable
-sealed interface CatArticlesScreen {
-  @Serializable
-  data object CatHome : CatArticlesScreen
+class FakeReadingTrackerRepository : ReadingTrackerRepository {
+  private val state = MutableStateFlow(0)
 
-  @Serializable
-  data object Paywalls : CatArticlesScreen
+  override val todayReadCount: Flow<Int> = state
 
-  @Serializable
-  data class CatArticle(val articleId: Long) : CatArticlesScreen
+  override suspend fun recordArticleRead(articleTitle: String) {
+    state.value += 1
+  }
 
-  @Serializable
-  data object Account : CatArticlesScreen
-
-  @Serializable
-  data object SubscriptionManagement : CatArticlesScreen
-
-  @Serializable
-  data object Bookmarks : CatArticlesScreen
+  fun setCount(value: Int) {
+    state.value = value
+  }
 }

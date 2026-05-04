@@ -13,27 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.revenuecat.catpaywalls.core.navigation
+package com.revenuecat.catpaywalls.feature.bookmarks
 
-import kotlinx.serialization.Serializable
+import com.revenuecat.catpaywalls.core.data.BookmarksRepository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 
-@Serializable
-sealed interface CatArticlesScreen {
-  @Serializable
-  data object CatHome : CatArticlesScreen
+class FakeBookmarksRepository(initial: Set<String> = emptySet()) : BookmarksRepository {
+  private val state = MutableStateFlow(initial)
 
-  @Serializable
-  data object Paywalls : CatArticlesScreen
+  override val bookmarkedArticleTitles: Flow<Set<String>> = state
 
-  @Serializable
-  data class CatArticle(val articleId: Long) : CatArticlesScreen
-
-  @Serializable
-  data object Account : CatArticlesScreen
-
-  @Serializable
-  data object SubscriptionManagement : CatArticlesScreen
-
-  @Serializable
-  data object Bookmarks : CatArticlesScreen
+  override suspend fun toggleBookmark(articleTitle: String) {
+    val current = state.value
+    state.value = if (articleTitle in current) current - articleTitle else current + articleTitle
+  }
 }
