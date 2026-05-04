@@ -57,8 +57,9 @@ class KmpFeatureConventionPlugin : Plugin<Project> {
             implementation(libs.findLibrary("kotlinx-serialization-json").get())
 
             // Image loading (Landscapist)
-            implementation(libs.findLibrary("landscapist-coil3").get())
+            implementation(libs.findLibrary("landscapist-image").get())
             implementation(libs.findLibrary("landscapist-placeholder").get())
+            implementation(libs.findLibrary("landscapist-zoomable").get())
           }
         }
       }
