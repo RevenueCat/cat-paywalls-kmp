@@ -50,8 +50,8 @@ import com.revenuecat.catpaywalls.core.model.Article
 import com.revenuecat.catpaywalls.core.navigation.CatArticlesScreen
 import com.revenuecat.catpaywalls.core.navigation.currentComposeNavigator
 import com.skydoves.landscapist.ImageOptions
-import com.skydoves.landscapist.coil3.CoilImage
 import com.skydoves.landscapist.components.rememberImageComponent
+import com.skydoves.landscapist.image.LandscapistImage
 import com.skydoves.landscapist.placeholder.shimmer.Shimmer
 import com.skydoves.landscapist.placeholder.shimmer.ShimmerPlugin
 
@@ -131,7 +131,7 @@ private fun DetailsHeader(article: Article) {
   Column(
     modifier = Modifier.fillMaxWidth(),
   ) {
-    CoilImage(
+    LandscapistImage(
       modifier = Modifier
         .fillMaxWidth()
         .height(460.dp),

@@ -86,8 +86,9 @@ kotlin {
       implementation(libs.purchases.kmp.core)
 
       // Image loading (Landscapist)
-      implementation(libs.landscapist.coil3)
+      implementation(libs.landscapist.image)
       implementation(libs.landscapist.placeholder)
+      implementation(libs.landscapist.zoomable)
 
       // Lifecycle (JetBrains KMP)
       implementation(libs.jetbrains.lifecycle.viewmodel)
