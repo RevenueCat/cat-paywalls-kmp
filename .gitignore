@@ -45,7 +45,6 @@ app/.idea/
 
 # DS_Store
 *.DS_Store
-**/DS_Store
 
 # Keystore files
 *.jks
@@ -58,3 +57,15 @@ google-services.json
 
 # Temporary API docs
 docs/api
+
+# CocoaPods
+Pods/
+
+# Xcode - user-specific
+xcuserdata/
+*.xcuserstate
+
+# Xcode - build artifacts
+DerivedData/
+*.xcscmblueprint
+*.xccheckout

@@ -28,7 +28,7 @@ landscapist = "2.9.7"
 navigation-compose = "2.9.2"
 
 # RevenueCat
-purchases-kmp = "2.10.2+17.55.1"
+purchases-kmp = "3.0.0"
 
 # Serialization & Coroutines
 kotlinx-serialization = "1.11.0"
