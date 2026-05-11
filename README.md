@@ -50,19 +50,19 @@ Cat Paywalls KMP is built using the [RevenueCat SDK for Kotlin Multiplatform](ht
 
 ## 💻 [Codelab](https://revenuecat.github.io/)
 
-1. [RevenueCat Google Play Integration](https://revenuecat.github.io/codelab/google-play/codelab-1-google-play-integration/index.html#0): In this codelab, you'll learn how to:
+1. [RevenueCat Google Play Integration](https://revenuecat.github.io/codelabs/google-play.html#0): In this codelab, you'll learn how to:
    - Properly configure products on Google Play.
    - Set up the RevenueCat dashboard and connect it to your Google Play products.
    - Understanding Product, Offering, Package, and Entitlement.
    - Create paywalls using the [Paywall Editor](https://www.revenuecat.com/docs/tools/paywalls/creating-paywalls#using-the-editor?utm_medium=organic&utm_source=github&utm_campaign=advocate).
 
-2. [RevenueCat App Store Integration](https://revenuecat.github.io/codelab/app-store/app-store/index.html#0)
+2. [RevenueCat App Store Integration](https://revenuecat.github.io/codelabs/app-store/index.html)
    - Properly configure products on App Store Connect.
    - Set up the RevenueCat dashboard and connect it to your App Store products.
    - Understanding Product, Offering, Package, and Entitlement.
    - Create paywalls using the Paywall Editor.
 
-3. [Kotlin Multiplatform Purchases & Paywalls Overview](https://revenuecat.github.io/codelab/kmp/codelab-3-kmp-sdk/index.html#0): In this codelab, you will:
+3. [Kotlin Multiplatform Purchases & Paywalls Overview](https://revenuecat.github.io/codelabs/kmp.html#1): In this codelab, you will:
    - Integrate the Android KMP SDK into your project
    - Implement in-app purchases in your Android application
    - Learn how to distinguish between paying and non-paying users
@@ -72,7 +72,7 @@ Cat Paywalls KMP is built using the [RevenueCat SDK for Kotlin Multiplatform](ht
 
 You can build this project with the few steps below:
 
-1. Configure your RevenueCat dashboard following [RevenueCat Google Play Integration codelab](https://revenuecat.github.io/codelab/google-play/codelab-1-google-play-integration/index.html#0), and [RevenueCat App Store Integration codelab](https://revenuecat.github.io/codelab/app-store/app-store/index.html#0).
+1. Configure your RevenueCat dashboard following [RevenueCat Google Play Integration codelab](https://revenuecat.github.io/codelabs/google-play.html#0), and [RevenueCat App Store Integration codelab](https://revenuecat.github.io/codelabs/app-store/index.html).
 2. In RevenueCat dashboard, go to the "API Keys" menu on the left side, and copy the SDK API keys for Play Store and App Store.
 3. Put your Play Store API key to the [Application class](https://github.com/revenuecat/cat-paywalls-kmp/blob/main/composeApp/src/androidMain/kotlin/com/revenuecat/catpaywalls/CatArticlesApplication.kt#L36) for Android, and [iosApp](https://github.com/revenuecat/cat-paywalls-kmp/blob/main/iosApp/iosApp/iosAppApp.swift#L9) for iOS.
 4. Replace the [applicationId](https://github.com/revenuecat/cat-paywalls-kmp/blob/main/composeApp/build.gradle.kts#L113) for your Google Play package name, configured on your ReveneuCat dasboard. For iOS, change the [product bundle id](https://github.com/revenuecat/cat-paywalls-kmp/blob/main/iosApp/iosApp.xcodeproj/project.pbxproj#L368) and [here](https://github.com/advocacies/cat-paywalls-kmp/blob/main/iosApp/iosApp.xcodeproj/project.pbxproj#L391) with your App Bundle ID.
