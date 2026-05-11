@@ -42,11 +42,11 @@ kotlin {
       isStatic = true
     }
     pod("RevenueCat") {
-      version = "~> 5.21"
+      version = "~> 5.71"
       extraOpts += listOf("-compiler-option", "-fmodules")
     }
     pod("RevenueCatUI") {
-      version = "~> 5.21"
+      version = "~> 5.71"
       extraOpts += listOf("-compiler-option", "-fmodules")
     }
   }

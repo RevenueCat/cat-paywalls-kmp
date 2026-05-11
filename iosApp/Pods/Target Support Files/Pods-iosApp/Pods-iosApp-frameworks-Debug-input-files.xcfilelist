@@ -1,5 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-iosApp/Pods-iosApp-frameworks.sh
-${BUILT_PRODUCTS_DIR}/PurchasesHybridCommon/PurchasesHybridCommon.framework
-${BUILT_PRODUCTS_DIR}/PurchasesHybridCommonUI/PurchasesHybridCommonUI.framework
 ${BUILT_PRODUCTS_DIR}/RevenueCat/RevenueCat.framework
 ${BUILT_PRODUCTS_DIR}/RevenueCatUI/RevenueCatUI.framework
